@@ -416,11 +416,11 @@ class AssetContainer {
     /**
      * Check using theme path.
      *
-     * @return boolean
+     * @return bool
      */
     public function isUsePath()
     {
-        return (boolean) $this->usePath;
+        return (bool) $this->usePath;
     }
 
     /**

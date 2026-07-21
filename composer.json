@@ -1,11 +1,15 @@
 {
-    "name": "facuz/laravel-themes",
-    "description": "Theme will help you organize your themes inside Laravel projects easily and maintain its related assets, layouts and partials for the theme in single directory. (Based on teepluss/theme)",
+    "name": "itfixit/laravel-theme",
+    "description": "Theme management for Laravel 13 applications, including themed views, layouts, assets, breadcrumbs, and middleware.",
     "keywords": ["laravel", "theme", "layout", "asset", "widget"],
-    "homepage": "https://github.com/facuz/laravel-theme",
+    "homepage": "https://github.com/itfixit/laravel-theme",
     "type": "library",
     "license": "MIT",
     "authors": [
+        {
+            "name": "It Fix It Ltd.",
+            "email": "sales@itfixit.bg"
+        },
         {
             "name": "Teepluss",
             "email": "admin@laravel.in.th"
@@ -30,6 +34,9 @@
     "require-dev": {
         "phpunit/phpunit": "^12.0",
         "vlucas/phpdotenv": "^5.6"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
     },
     "autoload": {
         "psr-4": {

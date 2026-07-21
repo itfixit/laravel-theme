@@ -1,8 +1,13 @@
-# Theme Management for Laravel
+# ItFixIt Laravel Theme
 
-Laravel-Theme is a theme management package for Laravel 13+ and PHP 8.3+, it is the easiest way to organize your skins, layouts and assets.
+Theme management for Laravel applications. It organizes themes, layouts, views, partials, assets, breadcrumbs, and theme-specific middleware in a single directory.
 
-This package is based on [teepluss\theme](https://github.com/teepluss/laravel-theme/)
+This package is a maintained fork of [FaCuZ Laravel Theme](https://github.com/FaCuZ/laravel-theme), which is based on [teepluss/theme](https://github.com/teepluss/laravel-theme/).
+
+## Requirements
+
+- PHP 8.3 or newer
+- Laravel 13 or newer
 
 >##### Differences with teepluss version:
 >- Compatible with Laravel 13+ and PHP 8.3+
@@ -17,12 +22,12 @@ This package is based on [teepluss\theme](https://github.com/teepluss/laravel-th
 
 ## Usage
 
-Theme has many features to help you get started with Laravel
+The package provides:
 
 - [Installation](#installation)
+- [Configuration](#configuration)
 - [Create new theme](#create-new-theme)
 - [Basic usage](#basic-usage)
-- [Configuration](#configuration)
 - [Basic usage of assets](#basic-usage-of-assets)
 - [Partials](#partials)
 - [Magic methods](#magic-methods)
@@ -40,8 +45,10 @@ Theme has many features to help you get started with Laravel
 To get the latest version of laravel-themes simply require it in your `composer.json` file.
 
 ~~~json
-"facuz/laravel-themes": "^3.2"
+"itfixit/laravel-theme": "^4.0"
 ~~~
+
+The Laravel service provider and facade are registered through package discovery.
 
 You'll then need to run `composer install` to download it and have the autoloader updated.
 

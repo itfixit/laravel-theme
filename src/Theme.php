@@ -322,7 +322,7 @@ class Theme implements ThemeContract
      * Check theme exists.
      *
      * @param  string  $theme
-     * @return boolean
+     * @return bool
      */
     public function exists($theme)
     {
@@ -688,7 +688,7 @@ class Theme implements ThemeContract
      * Check having binded data.
      *
      * @param  string $variable
-     * @return boolean
+     * @return bool
      */
     public function binded($variable)
     {
@@ -921,11 +921,11 @@ class Theme implements ThemeContract
      * Check region exists.
      *
      * @param  string  $region
-     * @return boolean
+     * @return bool
      */
     public function has($region)
     {
-        return (boolean) isset($this->regions[$region]);
+        return (bool) isset($this->regions[$region]);
     }
 
     /**
@@ -1163,7 +1163,7 @@ class Theme implements ThemeContract
      * Checking content argument existing.
      *
      * @param  string  $key
-     * @return boolean
+     * @return bool
      */
     public function hasContentArgument($key)
     {
