@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Facade;
 
+/**
+ * @mixin \Facuz\Theme\Breadcrumb
+ */
 class Breadcrumb extends Facade {
 
     /**

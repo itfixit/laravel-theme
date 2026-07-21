@@ -3,7 +3,6 @@
 use Closure;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\URL;
-use Illuminate\Support\Facades\HTML;
 use Illuminate\Support\Facades\Request;
 
 class AssetContainer {
@@ -28,6 +27,13 @@ class AssetContainer {
      * @var string
      */
     public $name;
+
+    /**
+     * Registered assets grouped by type.
+     *
+     * @var array
+     */
+    protected $assets = array();
 
     /**
      * Create a new asset container instance.
@@ -92,7 +98,7 @@ class AssetContainer {
 
             // Get root URL.
             $root  = Request::root();
-            $start = starts_with($root, 'http://') ? 'http://' : 'https://';
+            $start = Str::startsWith($root, 'http://') ? 'http://' : 'https://';
             $root  = preg_replace('~'.$start.'~', $scheme, $root, 1);
 
             // Asset URL without index.

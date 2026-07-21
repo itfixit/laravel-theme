@@ -1,26 +1,4 @@
 <?php
-use Opis\Closure\SerializableClosure;
-
-
-$function = function(){
-	//$theme->setTitle('Something in global.');
-	
-};
-$themeSerialize=new SerializableClosure($function);
-$asset = function(){
-	//$theme->setTitle('Something in global.');
-	$asset->cook('backbone', function($asset)
-	{
-		$asset->add('backbone', '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js');
-		$asset->add('underscorejs', '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js');
-	});
-
-	
-};
-$assetSerialize=new SerializableClosure($asset);
-
-
-
 
 return array(
 
@@ -112,10 +90,10 @@ return array(
 	'events' => array(
 
 		// Before all event, this event will effect for global.
-		'before' =>$themeSerialize,
+		'before' => null,
 
 		// This event will fire as a global you can add any assets you want here.
-		'asset' =>$assetSerialize
+		'asset' => null
 
 	),
 

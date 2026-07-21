@@ -16,11 +16,20 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "opis/closure": "^3.5@dev"
+        "php": ">=8.3",
+        "illuminate/console": "^13.0",
+        "illuminate/config": "^13.0",
+        "illuminate/database": "^13.0",
+        "illuminate/events": "^13.0",
+        "illuminate/filesystem": "^13.0",
+        "illuminate/http": "^13.0",
+        "illuminate/routing": "^13.0",
+        "illuminate/support": "^13.0",
+        "illuminate/view": "^13.0"
     },
     "require-dev": {
-        "illuminate/support": ">=5.0.1"
+        "phpunit/phpunit": "^12.0",
+        "vlucas/phpdotenv": "^5.6"
     },
     "autoload": {
         "psr-4": {
@@ -42,6 +51,5 @@
                 "Theme": "Facuz\\Theme\\Facades\\Theme"
             }
         }
-    },
-    "minimum-stability": "dev"
+    }
 }

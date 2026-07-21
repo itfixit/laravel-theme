@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Facade;
 
+/**
+ * @mixin \Facuz\Theme\Asset
+ */
 class Asset extends Facade {
 
     /**

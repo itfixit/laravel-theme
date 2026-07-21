@@ -1,11 +1,11 @@
 # Theme Management for Laravel
 
-Laravel-Theme is a theme management for Laravel 5+ (last check 6.3), it is the easiest way to organize your skins, layouts and assets.
+Laravel-Theme is a theme management package for Laravel 13+ and PHP 8.3+, it is the easiest way to organize your skins, layouts and assets.
 
 This package is based on [teepluss\theme](https://github.com/teepluss/laravel-theme/)
 
 >##### Differences with teepluss version:
->- Compatible with laravel 5+
+>- Compatible with Laravel 13+ and PHP 8.3+
 >- Removed twig compatibility (Reduces the package by 94%).
 >- Blade directives
 >- Better base template.

@@ -7,19 +7,12 @@ use Illuminate\Support\ServiceProvider;
 class ThemeServiceProvider extends ServiceProvider {
 
 	/**
-	 * Indicates if loading of the provider is deferred.
-	 *
-	 * @var bool
-	 */
-	protected $defer = false;
-
-	/**
 	 * Bootstrap the application events.
 	 *
 	 * @param  \Illuminate\Routing\Router $router
 	 * @return void
 	 */
-	public function boot(Router $router)
+	public function boot(Router $router): void
 	{
 		$configPath = __DIR__.'/../config/theme.php';
 
@@ -56,19 +49,16 @@ class ThemeServiceProvider extends ServiceProvider {
 	 *
 	 * @return void
 	 */
-	public function register()
+	public function register(): void
 	{
 		$configPath = __DIR__.'/../config/theme.php';
 
 		// Merge config to allow user overwrite.
 		$this->mergeConfigFrom($configPath, 'theme');
 
-		$app = $this->app;
-
 		// Register providers:
 		$this->registerAsset();
 		$this->registerTheme();
-		$this->registerWidget();
 		$this->registerBreadcrumb();
 		$this->registerManifest();
 
@@ -132,19 +122,6 @@ class ThemeServiceProvider extends ServiceProvider {
 		});
 
 		$this->app->alias('theme', 'Facuz\Theme\Contracts\Theme');
-	}
-
-	/**
-	 * Register widget provider.
-	 *
-	 * @return void
-	 */
-	public function registerWidget()
-	{
-		$this->app->singleton('widget', function($app)
-		{
-			return new Widget($app['view']);
-		});
 	}
 
 	/**
@@ -236,16 +213,6 @@ class ThemeServiceProvider extends ServiceProvider {
 		{
 			return new Commands\ThemeListCommand($app['config'], $app['files']);
 		});
-	}
-
-	/**
-	 * Get the services provided by the provider.
-	 *
-	 * @return array
-	 */
-	public function provides()
-	{
-		return array('asset', 'theme', 'widget', 'breadcrumb');
 	}
 
 }

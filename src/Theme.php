@@ -218,7 +218,7 @@ class Theme implements ThemeContract
     /**
      * Get a view
      *
-     * @return View
+     * @return \Illuminate\Http\Response
      */
     public function view($view, $args = []){
         if(is_array($view)) {
@@ -243,7 +243,7 @@ class Theme implements ThemeContract
     /**
      * Get or set data on manifest.
      *
-     * @return Collection
+     * @return mixed
      */
     public function info($property = null, $value = null) {
         $info = $this->manifest;
@@ -577,7 +577,7 @@ class Theme implements ThemeContract
     /**
      * Get theme path.
      *
-     * @return Collection
+     * @return string
      */
     public function getThemePath()
     {
@@ -679,7 +679,7 @@ class Theme implements ThemeContract
         // Buffer processes to save request.
         return Arr::get($this->bindings, $name, function() use (&$_events, &$_bindings, $name) {
             $response = current($_events->fire($name));
-            array_set($_bindings, $name, $response);
+            Arr::set($_bindings, $name, $response);
             return $response;
         });
     }
@@ -819,7 +819,7 @@ class Theme implements ThemeContract
             }
 
             $instance = $reflector->newInstance($this, $this->config, $this->view);
-            array_set($widgets, $className, $instance);
+            Arr::set($widgets, $className, $instance);
         }
 
         $instance->setAttributes($attributes);
@@ -1237,7 +1237,7 @@ class Theme implements ThemeContract
      *
      * @param  integer $statusCode
      * @throws UnknownLayoutFileException
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function render($statusCode = 200)
     {
